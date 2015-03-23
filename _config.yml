@@ -2,7 +2,7 @@
 title: Side
 email: jimmy.lu.2011@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-    This is a place for side stuff.
+    A place for stuff I'm into. Mostly just C++ though.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://beyondsora.github.io/" # the base hostname & protocol for your site
 twitter_username: beyondsora
