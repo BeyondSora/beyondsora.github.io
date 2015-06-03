@@ -21,7 +21,7 @@ of which `Cat` belongs to, whether or not that namespace is in the global
 namespace or not, whether or not `Cat` is a class, and if so, the members
 it contains and their respective names.
 
-```cpp
+{% highlight cpp %}
 namespace foo {
     class Cat : public Feline, public IsDomestic {
     public:
@@ -31,7 +31,7 @@ namespace foo {
         string _name;
     }
 }
-```
+{% endhighlight %}
 
 During compile-time, the compiler will generate a set of anonymous template
 instantiations to represent the properties of each of the constructs in the
@@ -43,20 +43,20 @@ of `MetaNamespace` generated.
 To find out the name of each of the members of `Cat`, we could potentially
 write:
 
-```cpp
+{% highlight cpp %}
 for_each<members<mirrored(Cat)>>(
     [] (auto meta_cls_mem) {
         cout << "Member: " << base_name<decltype(meta_cls_mem)> << endl;
     }
 );
-```
+{% endhighlight %}
 
 To find out the name of the namespace that contains `Cat`, we could write:
 
-```cpp
+{% highlight cpp %}
 auto catScope = scope<mirrored(Cat)>;
 cout << base_name<decltype(catScope)::namespace> << endl;
-```
+{% endhighlight %}
 
 If adopted, this proposal should make the many tasks currently requiring
 heavy use of macros and boilerplace code to replicate type information,
