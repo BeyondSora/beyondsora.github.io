@@ -21,7 +21,7 @@ of which `Cat` belongs to, whether or not that namespace is in the global
 namespace or not, whether or not `Cat` is a class, and if so, the members
 it contains and their respective names.
 
-```
+```cpp
 namespace foo {
     class Cat : public Feline, public IsDomestic {
     public:
@@ -43,7 +43,7 @@ of `MetaNamespace` generated.
 To find out the name of each of the members of `Cat`, we could potentially
 write:
 
-```
+```cpp
 for_each<members<mirrored(Cat)>>(
     [] (auto meta_cls_mem) {
         cout << "Member: " << base_name<decltype(meta_cls_mem)> << endl;
@@ -53,7 +53,7 @@ for_each<members<mirrored(Cat)>>(
 
 To find out the name of the namespace that contains `Cat`, we could write:
 
-```
+```cpp
 auto catScope = scope<mirrored(Cat)>;
 cout << base_name<decltype(catScope)::namespace> << endl;
 ```
